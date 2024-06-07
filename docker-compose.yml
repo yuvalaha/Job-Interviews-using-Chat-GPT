@@ -1,0 +1,22 @@
+# All containers needed: 
+services: 
+
+  # React service:
+  react-service: 
+
+    # Image name to create from Dockerfile:
+    image: assaffink/job-interview-image:1.0
+
+    # Where is the location of the Dockerfile:
+    build: .
+
+    # Container name to create: 
+    container_name: job-interview-container
+
+    # What to do if the container crashes: 
+    restart: unless-stopped # Restart when crashes, unless we stopped it.
+
+    # Port mapping (host:container)
+    ports:
+      - 80:3000
+
